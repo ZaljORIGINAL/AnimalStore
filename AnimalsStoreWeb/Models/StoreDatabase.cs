@@ -12,20 +12,20 @@ namespace AnimalsStoreWeb.Models
         {
         }
 
-        public virtual DbSet<orders> orders { get; set; }
-        public virtual DbSet<shop_items> shop_items { get; set; }
+        public virtual DbSet<Order> orders { get; set; }
+        public virtual DbSet<ShopItem> shop_items { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<orders>()
+            modelBuilder.Entity<Order>()
                 .Property(e => e.fixed_price)
                 .HasPrecision(19, 4);
 
-            modelBuilder.Entity<shop_items>()
+            modelBuilder.Entity<ShopItem>()
                 .Property(e => e.price)
                 .HasPrecision(19, 4);
 
-            modelBuilder.Entity<shop_items>()
+            modelBuilder.Entity<ShopItem>()
                 .HasMany(e => e.orders)
                 .WithRequired(e => e.shop_items)
                 .HasForeignKey(e => e.shop_item_id)

@@ -6,12 +6,12 @@ namespace AnimalsStoreWeb.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class shop_items
+    public partial class ShopItem
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public shop_items()
+        public ShopItem()
         {
-            orders = new HashSet<orders>();
+            orders = new HashSet<Order>();
         }
 
         public int id { get; set; }
@@ -33,6 +33,6 @@ namespace AnimalsStoreWeb.Models
         public bool visible { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<orders> orders { get; set; }
+        public virtual ICollection<Order> orders { get; set; }
     }
 }
