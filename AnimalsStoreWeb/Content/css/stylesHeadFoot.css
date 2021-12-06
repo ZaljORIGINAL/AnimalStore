@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f1f1f1;
+    position: relative;
+    padding-bottom: 58px;
+    min-height: 100vh;
+    background-color: #EBE9E9;
+}
+
+header {
+    font-family: Times, cursive;
+    text-align: left;
+    background-color: #333;
+    color: #226123;
+    padding: 0px;
+    max-height: 81px;
+    background-color: #BC9757;
+    font-weight: 600;
+}
+
+.btn-1 {
+    height: 50px;
+    width: 150px;
+    border: none;
+    margin-left: 30px;
+    background-color: #BC9757;
+    transition: ease-out 0.5s;
+    outline: none;
+    font-size: 1.3em;
+    font-family: fantasy, cursive;
+    border-radius: 8px;
+}
+
+    .btn-1:hover {
+        box-shadow: inset 200px 0 0 200px #226123;
+        cursor: pointer;
+        color: #BC9757;
+    }
+
+.btn-2 {
+    font-size: 1.3em;
+    font-family: fantasy, cursive;
+    height: 50px;
+    width: 150px;
+    margin-left: 30px;
+    border: none;
+    background-color: #BC9757;
+    transition: ease-out 0.5s;
+    outline: none;
+    border-radius: 8px;
+}
+
+    .btn-2:hover {
+        box-shadow: inset 200px 0 0 200px #226123;
+        cursor: pointer;
+        color: #BC9757;
+    }
+
+.Name {
+    font-size: 3em;
+    font-family: sans-serif;
+}
+
+    .Name:hover {
+        cursor: default;
+    }
+
+footer {
+    text-align: center;
+    background-color: #BC9757;
+    color: #226123;
+    font-family: Times, Times New Roman;
+    padding: 20px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* position: fixed;
+  z-index: 1; */
+}
+
+@media(max-width:768px) {
+    header {
+        padding: 30px 20px;
+    }
+
+        header h1 {
+            font-size: 36px;
+            margin-bottom: 22px;
+        }
+
+        header p {
+            font-size: 18px;
+        }
+
+    main {
+        width: 100vw;
+        padding: 20px;
+    }
+
+    div {
+        margin-bottom: 16px;
+        font-size: 14px;
+    }
+
+        div h3 {
+            margin: 10px 0 20px 0;
+        }
+
+        div p {
+            margin-top: 16px;
+            line-height: 20px;
+        }
