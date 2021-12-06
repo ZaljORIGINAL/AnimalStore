@@ -1,0 +1,11 @@
+﻿@using AnimalsStoreWeb.Models
+@model AnimalsStoreWeb.Models.FindedOrders
+
+<p>Email: @Model.Email</p>
+
+@foreach (orders order in Model.OrdersList)
+{
+    <p>Наименование товара: @order.shop_items.name</p>
+    <p>В количестве: @order.count</p>
+    <p>Итоговая цена: @order.fixed_price</p>
+}

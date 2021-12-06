@@ -89,3 +89,4 @@ D:\Алмаз\ШАРАГА\Курсовые\3 курс\Заказы\Сарвар
 D:\Алмаз\ШАРАГА\Курсовые\3 курс\Заказы\Сарвартдинова\AnimalsStoreWeb\AnimalsStoreWeb\obj\Debug\AnimalsStoreWeb.csproj.CopyComplete
 D:\Алмаз\ШАРАГА\Курсовые\3 курс\Заказы\Сарвартдинова\AnimalsStoreWeb\AnimalsStoreWeb\obj\Debug\AnimalsStoreWeb.dll
 D:\Алмаз\ШАРАГА\Курсовые\3 курс\Заказы\Сарвартдинова\AnimalsStoreWeb\AnimalsStoreWeb\obj\Debug\AnimalsStoreWeb.pdb
+D:\Алмаз\ШАРАГА\Курсовые\3 курс\Заказы\Сарвартдинова\AnimalsStoreWeb\AnimalsStoreWeb\bin\Owin.dll

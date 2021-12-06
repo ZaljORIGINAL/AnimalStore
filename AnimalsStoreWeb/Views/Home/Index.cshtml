@@ -20,7 +20,7 @@
         @foreach (shop_items item in ShopItems)
         {
             <br />
-            <div class="serviceblock" onclick="location.href='/AnimalPresent/GetAnimal?id=@item.id'">
+            <div class="serviceblock" onclick="location.href='/ShopItemPresent/Index?id=@item.id'">
                 <P>@item.GetImage()</P>
                 <p class="service">@item.name</p>
                 <p class="price">Цена : @item.price р</p>

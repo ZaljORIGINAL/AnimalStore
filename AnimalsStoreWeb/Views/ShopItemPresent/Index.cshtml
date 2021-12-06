@@ -1,0 +1,6 @@
+﻿@model AnimalsStoreWeb.Models.shop_items
+
+<p>Нименование товара: @Model.name</p>
+<p>Описание товара: @Model.description</p>
+<p>Цена товара: @Model.price</p>
+<button onclick="location.href='/OrderForm/Index?id=@Model.id'">"Купить"</button>

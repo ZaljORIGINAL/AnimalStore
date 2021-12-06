@@ -1,0 +1,18 @@
+﻿@using AnimalsStoreWeb.Models
+@model AnimalsStoreWeb.Models.shop_items
+
+@{
+    orders order = new orders()
+    {
+        email = "Ebobola",
+        shop_item_id = Model.id,
+        count = 2,
+        fixed_price = Model.price * 2,
+        status = 2
+    };
+}
+
+<p>Оформление покупки</p>
+<p>Наименование товара: @Model.name</p>
+<p>Стоимость за штуку: @Model.price</p>
+<button>@Html.ActionLink("Принять", "RegistrateOrder", order)</button>
