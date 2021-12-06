@@ -6,7 +6,7 @@ namespace AnimalsStoreWeb.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class Order
+    public partial class orders
     {
         public long id { get; set; }
 
@@ -23,6 +23,6 @@ namespace AnimalsStoreWeb.Models
 
         public byte status { get; set; }
 
-        public virtual ShopItem shop_items { get; set; }
+        public virtual shop_items shop_items { get; set; }
     }
 }

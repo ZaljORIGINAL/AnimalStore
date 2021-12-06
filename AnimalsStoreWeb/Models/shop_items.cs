@@ -1,17 +1,19 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Data.Entity.Spatial;
+using System.Drawing;
+using System.IO;
+
 namespace AnimalsStoreWeb.Models
 {
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
-
-    public partial class ShopItem
+    public partial class shop_items
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public ShopItem()
+        public shop_items()
         {
-            orders = new HashSet<Order>();
+            orders = new HashSet<orders>();
         }
 
         public int id { get; set; }
@@ -33,6 +35,14 @@ namespace AnimalsStoreWeb.Models
         public bool visible { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Order> orders { get; set; }
+        public virtual ICollection<orders> orders { get; set; }
+
+        public Image GetImage()
+        {
+            MemoryStream ms = new MemoryStream(image);
+            Image img = Image.FromStream(ms);
+            Size size = new Size(100, 100);
+            return new Bitmap(img, size);
+        }
     }
 }

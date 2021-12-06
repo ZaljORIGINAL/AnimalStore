@@ -1,4 +1,8 @@
-﻿<html lang="en">
+﻿@using AnimalsStoreWeb.Models
+
+@model AnimalsStoreWeb.Models.shop_items
+
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,30 +12,17 @@
 <body>
     <main>
         <div class="serviceblock">
-            <p class="service">@Model.PostName</p>
+            <p class="service">@Model.name</p>
             <br>
-            <span class="price" id="price" value="30"> Цена :@Math.Round(Model.Price, 0) р</span>
-
-            <p class="animalinfo">Тип услуги: @Model.ServiceName</p>
-            <p class="animalinfo">Автор: @Model.AuthorName</p>
-            <p class="animalinfo">Локация: @Model.CityName</p>
-            <br>
-            <h3 class="animalinfo">@Model.Source</h3>
-
+            <span class="price" id="price" value="@Model.price"> Цена :@Model.price р</span>
             <input type="text" name="email" class="email" placeholder="Электронная почта">
             <br>
             <br>
-            <br>
             <input type="text" name="amount" class="amount" id="amount" onchange="ChangePrice()" placeholder="Количество">
-            <!--@if (!User.Identity.GetUserId().Equals(Model.AuthorId))
-            {
-
-            }-->
             <p class="finprice">Итого:</p>
 
             <span name="finalprice" id="finalprice" class="finprice"></span>
             <br>
-            <button id="toggle" class="savebtn">@Html.ActionLink("Заказать", "RegistrateOrder", Model)</button>
         </div>
         <script type="text/javascript">
         function ChangePrice() {

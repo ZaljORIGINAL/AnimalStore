@@ -1,0 +1,39 @@
+﻿@using AnimalsStoreWeb.Models
+
+@model AnimalsStoreWeb.Models.shop_items
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="~/Content/css/stylesAnimalPresent.css">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <form>
+            <div class="serviceblock">
+                <p>@Model.GetImage()</p>
+                <p class="service">@Model.name</p>
+
+                <span class="price" id="price" value="30"> Цена :@Model.price р</span>
+                <h3 class="animalinfo">@Model.description</h3>
+                <br>
+                <input type="text" name="amount" class="amount" id="amount" onchange="ChangePrice()">
+
+                <p>Итого:</p>
+
+                <p name="finalprice" id="finalprice" class="finprice"></p>
+
+                <button type="submit" >@Html.ActionLink("Заказать", "RegistrateOrder", Model)</button>
+            </div>
+        </form>
+        <script type="text/javascript">
+            function ChangePrice() {
+                var first = document.getElementById('amount').value;
+                document.getElementById('finalprice').innerHTML = first * 2;
+            }
+        </script>
+    </main>
+</body>
+</html>
