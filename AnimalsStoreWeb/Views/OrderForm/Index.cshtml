@@ -10,68 +10,47 @@
 }
 
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="~/Content/css/stylesRegistrateOrder.css">
-    <title>Document</title>
-</head>
-<body>
-    <main>
-        <div id="box" class="serviceblock">
-            <p class="service">Оформление заказа</p>
-            <p class="service">Товар: @Model.name</p>
-            <br>
-            <span class="price" id="price" value="@Model.price"> Цена: @Model.price р</span>
-            <br>
-            <br />
-            <input type="text" name="email" class="email" placeholder="Электронная почта">
-            <br>
-            <br>
-            <br>
-            <input type="text" name="amount" class="amount" id="amount" placeholder="Количество">
-            <p class="finprice">Итого:</p>
-            <br />
-            <span name="finalprice" id="finalprice" class="finprice"></span>
-            <br>
-            <button id="accept" class="savebtn">@Html.ActionLink("Принять", "RegistrateOrder", order)</button>
-        </div>
-        <script type="text/javascript">
-        function initScripts() {
-                    document.getElementById('accept').disabled = true;
-                    document.getElementById('box').onmousemove = checkFields;
-                }
-                
-                function checkFields() {
-                    var isFull= true;
-                    var email = document.getElementById('email').value;
-                    if (email.isEmpty())
-                        isFull= false;
-                    
-                    var count = document.getElementById('amount').value;
-                    if (count.isEmpty() || count <= 0)
-                    {
-                        isFull= false;
-                    } else {                
-                        changePrice();
-                    }
-                    
-                    if (isFull) {
-                        @order.email = email;
-                        @order.count = count;
-                        @order.fixed_price = count * @Model.price;
-                        document.getElementById('accept').disabled = false;
-                    }
-                        
-                }
-                
-                function changePrice() {
-                    @order.email = document.getElementById('email').value;
-                    @order.count = document.getElementById('amount').value;
-                    @order.fixed_price = @order.count * @Model.price;
-                    document.getElementById('finalprice').innerHTML = @order.fixed_price + " р";
-                }
-        </script>
-    </main>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="~/Content/css/stylesRegistrateOrder.css">
+        <title>Document</title>
+    </head>
+    <body>
+        <main>
+            <div id="box" class="serviceblock">
+                <p id="info">Null</p>
+                <p class="service">Оформление заказа</p>
+                <p class="service">Товар: @Model.name</p>
+                <br>
+                <span class="price" id="price" value="@Model.price"> Цена: @Model.price р</span>
+                <br>
+                <input id="email" placeholder="Электронная почта" type="text" value="" oninput="check_email()">
+                <br>
+                <input class="amount" id="amount" placeholder="Количество" type="number" value="1" min="1" oninput="calculate_final_price()">
+                <p class="finprice">Итого:</p>
+                <br/>
+                <span name="finalprice" id="final_price" class="finprice"></span>
+                <br>
+                <button id="accept_order" class="savebtn">@Html.ActionLink("Принять", "RegistrateOrder", order)</button>
+            </div>
+        </main>
+    </body>
+    <script language="JavaScript">
+        document.getElementById('box').onmousemove = mouse_is_moving;
+        document.getElementById('accept_order').style.visibility="hidden";
+    
+        function check_email()
+        {
+            @order.email = document.getElementById('email').value;
+        }
+        
+        function calculate_final_price()
+        {
+            var count = document.getElementById('amount').value;
+            @order.count = count;
+            @order.fixed_price = @order.count * @Model.price;
+            document.getElementById('finalprice').value = @order.fixed_price;
+        }
+    </script>
 </html>
