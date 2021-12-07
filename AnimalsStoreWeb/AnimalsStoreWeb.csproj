@@ -134,6 +134,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\OrderFormController.cs" />
+    <Compile Include="Controllers\SearchByEmailController.cs" />
     <Compile Include="Controllers\ShopItemPresentController.cs" />
     <Compile Include="Controllers\UserOrdersController.cs" />
     <Compile Include="Global.asax.cs">
@@ -153,6 +154,7 @@
     <Content Include="Content\css\stylesAnimalPresent.css" />
     <Content Include="Content\css\stylesforStore.css" />
     <Content Include="Content\css\stylesHeadFoot.css" />
+    <Content Include="Content\css\stylesOrderList.css" />
     <Content Include="Content\css\stylesOrders.css" />
     <Content Include="Content\css\stylesRegistrateOrder.css" />
     <Content Include="favicon.ico" />
@@ -187,6 +189,7 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\SearchByEmail\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

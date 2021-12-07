@@ -28,7 +28,7 @@ header {
     height: 50px;
     width: 150px;
     border: none;
-    margin-left: 30px;
+    margin-left: 90px;
     background-color: #BC9757;
     transition: ease-out 0.5s;
     outline: none;
@@ -50,6 +50,7 @@ header {
     width: 150px;
     margin-left: 30px;
     border: none;
+    
     background-color: #BC9757;
     transition: ease-out 0.5s;
     outline: none;
@@ -80,8 +81,6 @@ footer {
     position: absolute;
     bottom: 0;
     width: 100%;
-    /* position: fixed;
-  z-index: 1; */
 }
 
 @media(max-width:768px) {

@@ -6,86 +6,12 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
+    background-image: url("https://cdn.discordapp.com/attachments/644840183476518922/917411799949778986/white-wood-texture-background_35956-2511.png");
     position: relative;
     padding-bottom: 58px;
     min-height: 100vh;
     background-color: #84A61E;
 }
-
-
-.btn-1 {
-    height: 50px;
-    width: 150px;
-    border: none;
-    margin-left: 30px;
-    background-color: #8578A3;
-    transition: ease-out 0.5s;
-    outline: none;
-    font-size: 1.3em;
-    font-family: Bradley Hand, cursive;
-}
-
-    .btn-1:hover {
-        box-shadow: inset 200px 0 0 0 #CFCECE;
-        cursor: pointer;
-        color: #8578A3;
-    }
-
-.btn-2 {
-    font-size: 1.3em;
-    font-family: Bradley Hand, cursive;
-    height: 50px;
-    width: 150px;
-    border: none;
-    margin-left: -5px;
-    background-color: #8578A3;
-    transition: ease-out 0.5s;
-    outline: none;
-}
-
-    .btn-2:hover {
-        box-shadow: inset 200px 0 0 0 #CFCECE;
-        cursor: pointer;
-        color: #8578A3;
-    }
-
-.btn-3 {
-    font-size: 1.3em;
-    font-family: Bradley Hand, cursive;
-    height: 50px;
-    width: 150px;
-    border: none;
-    margin-left: -5px;
-    background-color: #8578A3;
-    transition: ease-out 0.5s;
-    outline: none;
-}
-
-    .btn-3:hover {
-        box-shadow: inset 200px 0 0 0 #CFCECE;
-        cursor: pointer;
-        color: #8578A3;
-    }
-
-.btn-4 {
-    margin-top: 30px;
-    font-size: 1.3em;
-    font-family: Bradley Hand, cursive;
-    height: 50px;
-    width: 150px;
-    border: none;
-    float: right;
-    background-color: #8578A3;
-    transition: ease-out 0.5s;
-    outline: none;
-}
-
-    .btn-4:hover {
-        box-shadow: inset 200px 0 0 0 #CFCECE;
-        cursor: pointer;
-        color: #8578A3;
-    }
-
 .Name {
     font-size: 3em;
 }
@@ -152,7 +78,7 @@ div {
     font-size: 1.3em;
     font-family: Bradley Hand, cursive;
     font-weight: 700;
-    margin-top: -15%;
+    margin-top: -2%;
     margin-left: 25%;
 }
 

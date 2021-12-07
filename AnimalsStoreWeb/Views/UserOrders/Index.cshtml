@@ -1,11 +1,31 @@
-﻿@using AnimalsStoreWeb.Models
-@model AnimalsStoreWeb.Models.FindedOrders
+﻿<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="~/Content/css/stylesOrderList.css">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <div class="allservices">
+            <h2 class="allservice">Список заказов ЭЛ. ПОЧТА</h2>
+        </div>
+        <br>
+        <br>
+        <!--foreach (PostViewModel postModel in Model.Posts)-->
+        {
+        <br />
+        <div class="serviceblock">
+            <p class="service">Название</p>
+            <br>
+            <a class="links" href="ССЫЛКА НА ТОВАР">Перейти к товару</a>
+            <p class="price">Цена : ЦЕНА р</p>
+            <p class="animalinfo">Количество</p>
+            <p class="status">Статус</p>
 
-<p>Email: @Model.Email</p>
-
-@foreach (orders order in Model.OrdersList)
-{
-    <p>Наименование товара: @order.shop_items.name</p>
-    <p>В количестве: @order.count</p>
-    <p>Итоговая цена: @order.fixed_price</p>
-}
+        </div>
+        <br />
+        }
+    </main>
+</body>
+</html>
