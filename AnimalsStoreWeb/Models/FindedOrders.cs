@@ -4,13 +4,13 @@ namespace AnimalsStoreWeb.Models
 {
     public class FindedOrders
     {
-        public string Email;
+        public string email;
 
         public List<orders> OrdersList;
 
         public FindedOrders(string email, List<orders> ordersList)
         {
-            Email = email;
+            this.email = email;
             OrdersList = ordersList;
         }
     }

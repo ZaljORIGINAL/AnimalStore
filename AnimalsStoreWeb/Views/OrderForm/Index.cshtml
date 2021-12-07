@@ -4,18 +4,11 @@
 @{
     orders order = new orders()
     {
-        email = "Ebobola",
         shop_item_id = Model.id,
-        count = 2,
-        fixed_price = Model.price * 2,
-        status = 2
+        status = 1
     };
 }
 
-<p>Оформление покупки</p>
-<p>Наименование товара: @Model.name</p>
-<p>Стоимость за штуку: @Model.price</p>
-<button>@Html.ActionLink("Принять", "RegistrateOrder", order)</button>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -26,9 +19,10 @@
 <body>
     <main>
         <div class="serviceblock">
-            <p class="service">@Model.name</p>
+            <p class="service">Оформление заказа</p>
+            <p class="service">Товар: @Model.name</p>
             <br>
-            <span class="price" id="price" value="30"> Цена :@Math.Round(@Model.price, 0) р</span>
+            <span class="price" id="price" value="@Model.price"> Цена: @Model.price р</span>
             <br>
             <br />
             <input type="text" name="email" class="email" placeholder="Электронная почта">
@@ -44,10 +38,24 @@
         </div>
         <script type="text/javascript">
         function ChangePrice() {
-            var first = document.getElementById('amount').value;
-            document.getElementById('finalprice').innerHTML = first * @Model.price + " р";
+            var email = document.getElementById('email').value;
+            var count = document.getElementById('amount').value;
+            @order.email = email;
+            @order.count = count;
+            @order.fixed_price = count * @Model.price;
+            document.getElementById('finalprice').innerHTML = @order.count * @Model.price + " р";
         }
         </script>
     </main>
+<script type="text/javascript">
+        function ChangePrice() {
+            var email = document.getElementById('email').value;
+            var count = document.getElementById('amount').value;
+            @order.email = email;
+            @order.count = count;
+            @order.fixed_price = count * @Model.price;
+            document.getElementById('finalprice').innerHTML = @order.count * @Model.price + " р";
+        }
+    </script>
 </body>
 </html>
