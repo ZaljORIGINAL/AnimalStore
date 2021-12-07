@@ -2,36 +2,45 @@
 @model AnimalsStoreWeb.Models.FindedOrders
 
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="~/Content/css/stylesOrderList.css">
-    <title>Document</title>
-</head>
-<body>
-<main>
-    <form class="Find" action="~/UserOrders/" >
-        <h2 class="allservice">Введите почту</h2>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="~/Content/css/stylesOrderList.css">
+        <title>Document</title>
+    </head>
+    <body>
+        <main>
+            <div class="Find">
+                <h2 class="allservice">Введите почту</h2>
                 <br>
-                <input type="text" id="email" onchange="updateMail()" placeholder="Электронная почта">
-        
-                <button onclick="window.location.href = '/UserOrders/Index?email=';">Просмотреть</button>
-    </form>
-    <br>
-    @foreach (orders orders in Model.OrdersList)
-    {
-        <br/>
-        <div class="serviceblock">
-            <p class="service">Товар: @orders.shop_items.name</p>
+                <input type="text" id="email" placeholder="Электронная почта" value="@Model.email">
+                
+                <button onclick="serch()" >Просмотреть</button>
+                <p id="info" onclick=""></p>
+            </div>
             <br>
-            <a class="links" href="location.href='/ShopItemPresent/Index?id=@orders.shop_items.id'">Перейти к товару</a>
-            <p class="price">Цена : @orders.fixed_price р</p>
-            <p class="animalinfo">Количество: @orders.count</p>
-            <p class="status">Статус: @orders.</p>
+            @foreach (orders orders in Model.OrdersList)
+            {
+                <br/>
+                <div class="serviceblock">
+                    <p class="service">Товар: @orders.shop_items.name</p>
+                    <br>
+                    <a class="links" href="location.href='/ShopItemPresent/Index?id=@orders.shop_items.id'">Перейти к товару</a>
+                    <p class="price">Цена : @orders.fixed_price р</p>
+                    <p class="animalinfo">Количество: @orders.count</p>
+                    <p class="status">Статус: @orders.</p>
 
-        </div>
-        <br/>
+                </div>
+                <br/>
+            }
+        </main>
+    </body>
+    <script language="JavaScript">
+    function serch()
+    {
+        var email = document.getElementById('email').value;
+        var url = '/UserOrders/Index?email=' + email;
+        return window.location.href = url;
     }
-</main>
-</body>
+    </script>
 </html>

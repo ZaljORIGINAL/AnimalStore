@@ -18,7 +18,7 @@
 </head>
 <body>
     <main>
-        <div class="serviceblock">
+        <div id="box" class="serviceblock">
             <p class="service">Оформление заказа</p>
             <p class="service">Товар: @Model.name</p>
             <br>
@@ -29,33 +29,49 @@
             <br>
             <br>
             <br>
-            <input type="text" name="amount" class="amount" id="amount" onchange="ChangePrice()" placeholder="Количество">
+            <input type="text" name="amount" class="amount" id="amount" placeholder="Количество">
             <p class="finprice">Итого:</p>
             <br />
             <span name="finalprice" id="finalprice" class="finprice"></span>
             <br>
-            <button id="toggle" class="savebtn">@Html.ActionLink("Принять", "RegistrateOrder", order)</button>
+            <button id="accept" class="savebtn">@Html.ActionLink("Принять", "RegistrateOrder", order)</button>
         </div>
         <script type="text/javascript">
-        function ChangePrice() {
-            var email = document.getElementById('email').value;
-            var count = document.getElementById('amount').value;
-            @order.email = email;
-            @order.count = count;
-            @order.fixed_price = count * @Model.price;
-            document.getElementById('finalprice').innerHTML = @order.count * @Model.price + " р";
-        }
+        function initScripts() {
+                    document.getElementById('accept').disabled = true;
+                    document.getElementById('box').onmousemove = checkFields;
+                }
+                
+                function checkFields() {
+                    var isFull= true;
+                    var email = document.getElementById('email').value;
+                    if (email.isEmpty())
+                        isFull= false;
+                    
+                    var count = document.getElementById('amount').value;
+                    if (count.isEmpty() || count <= 0)
+                    {
+                        isFull= false;
+                    } else {                
+                        changePrice();
+                    }
+                    
+                    if (isFull) {
+                        @order.email = email;
+                        @order.count = count;
+                        @order.fixed_price = count * @Model.price;
+                        document.getElementById('accept').disabled = false;
+                    }
+                        
+                }
+                
+                function changePrice() {
+                    @order.email = document.getElementById('email').value;
+                    @order.count = document.getElementById('amount').value;
+                    @order.fixed_price = @order.count * @Model.price;
+                    document.getElementById('finalprice').innerHTML = @order.fixed_price + " р";
+                }
         </script>
     </main>
-<script type="text/javascript">
-        function ChangePrice() {
-            var email = document.getElementById('email').value;
-            var count = document.getElementById('amount').value;
-            @order.email = email;
-            @order.count = count;
-            @order.fixed_price = count * @Model.price;
-            document.getElementById('finalprice').innerHTML = @order.count * @Model.price + " р";
-        }
-    </script>
 </body>
 </html>
