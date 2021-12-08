@@ -37,20 +37,13 @@
         </main>
     </body>
     <script language="JavaScript">
-        document.getElementById('box').onmousemove = mouse_is_moving;
         document.getElementById('accept_order').style.visibility="hidden";
-    
-        function check_email()
-        {
-            @order.email = document.getElementById('email').value;
-        }
         
         function calculate_final_price()
         {
             var count = document.getElementById('amount').value;
-            @order.count = count;
-            @order.fixed_price = @order.count * @Model.price;
-            document.getElementById('finalprice').value = @order.fixed_price;
+            var price = document.getElementById('price').value;
+            document.getElementById('final_price').value = count * price;
         }
     </script>
 </html>
