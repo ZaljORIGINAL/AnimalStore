@@ -181,3 +181,5 @@ C:\Users\Рамазан\source\repos\AnimalStore\AnimalsStoreWeb\obj\Debug\Anima
 C:\Users\Рамазан\source\repos\AnimalStore\AnimalsStoreWeb\obj\Debug\AnimalsStoreWeb.csproj.CoreCompileInputs.cache
 C:\Users\Рамазан\source\repos\AnimalStore\AnimalsStoreWeb\obj\Debug\AnimalsStoreWeb.dll
 C:\Users\Рамазан\source\repos\AnimalStore\AnimalsStoreWeb\obj\Debug\AnimalsStoreWeb.pdb
+C:\Users\Рамазан\source\repos\AnimalStore\AnimalsStoreWeb\obj\Debug\AnimalsStoreWeb.Properties.Resources.resources
+C:\Users\Рамазан\source\repos\AnimalStore\AnimalsStoreWeb\obj\Debug\AnimalsStoreWeb.csproj.GenerateResource.cache
