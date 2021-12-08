@@ -43,7 +43,6 @@ div {
     font-family: Times, cursive;
     height: 40px;
     width: 130px;
-    border: none;
     margin-top: 7%;
     background-color: #569B57;
     transition: ease-out 0.5s;
@@ -55,7 +54,6 @@ div {
     .savebtn:hover {
         box-shadow: inset 0 200px 0 0 #BC9757;
         cursor: pointer;
-        
     }
 .email {
     margin-left: 15%;

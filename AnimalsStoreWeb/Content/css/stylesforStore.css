@@ -32,11 +32,7 @@ a {
     color: #FFFFFF;
 }
 
-    a:hover {
-        columns: #8b9ff5;
-    }
-
-    a: active {
+    a:active {
         color: #354E3C
     }
 
@@ -96,16 +92,11 @@ div {
     font-size: 0.9em;
 }
 
-.serviceblock {
-    min-height: 300px;
-}
-
 .savebtn {
     font-size: 1.1em;
     font-family: Bradley Hand, cursive;
     height: 50px;
     width: 130px;
-    border: none;
     margin-left: 105px;
     background-color: #569B57;
     transition: ease-out 0.5s;
@@ -149,14 +140,26 @@ div {
     transition: ease-out 0.5s;
 }
 
-.serviceblock {
+.shop_item_box {
+    display: flex;
+
     border-bottom: 6px solid #BC9757;
 }
 
-    .serviceblock:hover {
+    .shop_item_box:hover {
         cursor: pointer;
     }
 
+.shop_item_photo_box {
+    background-color: #FFDA77;
+    height: 300px;
+    width: 300px;
+}
+
+.shop_item_description {
+    margin-left: 40px;
+}
+    
 .animalinfo {
     margin-left: 25%;
 }

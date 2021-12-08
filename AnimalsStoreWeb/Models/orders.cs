@@ -24,25 +24,5 @@ namespace AnimalsStoreWeb.Models
         public byte status { get; set; }
 
         public virtual shop_items shop_items { get; set; }
-
-        public string GetStatus()
-        {
-            switch (status)
-            {
-                case 1:
-                    return "Отменен";
-                
-                case 2:
-                    return "Заказан";
-                
-                case 3:
-                    return "В процессе";
-                
-                case 4:
-                    return "Завершен";
-                
-                default: return "Ошибка";
-            }
-        }
     }
 }

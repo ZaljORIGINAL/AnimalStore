@@ -12,7 +12,7 @@ namespace AnimalsStoreWeb.Controllers
             List<orders> ordersList = new List<orders>();
             if (email.Length != 0)
             {
-                StoreDatabase database = new StoreDatabase();
+                AnimalStore database = new AnimalStore();
                 ordersList = database.orders.Where(order => order.email.Equals(email)).ToList();
             }
 

@@ -1,13 +1,11 @@
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Data.Entity.Spatial;
-using System.Drawing;
-using System.IO;
-
 namespace AnimalsStoreWeb.Models
 {
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Data.Entity.Spatial;
+
     public partial class shop_items
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -29,20 +27,14 @@ namespace AnimalsStoreWeb.Models
         [Column(TypeName = "money")]
         public decimal price { get; set; }
 
-        [Required]
-        public byte[] image { get; set; }
-
         public bool visible { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<orders> orders { get; set; }
 
-        public Image GetImage()
+        public string GetPathToImage()
         {
-            MemoryStream ms = new MemoryStream(image);
-            Image img = Image.FromStream(ms);
-            Size size = new Size(100, 100);
-            return new Bitmap(img, size);
+            return "/animals/animal_store_" + id + ".jpg";
         }
     }
 }

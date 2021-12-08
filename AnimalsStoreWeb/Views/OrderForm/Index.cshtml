@@ -20,36 +20,49 @@
         <main>
             <div id="box" class="serviceblock">
                 <p class="service">Оформление заказа</p>
-                <hr />
-                <p class="service">Товар: @Model.name</p>
+                <hr/>
+                <p class="service">Товар:</p>
+                <p class="price">@Model.name</p>
+                <p class="price">Цена за 1 штуку:</p>
+                <p class="price" id="price">@Convert.ToInt32(Model.price)</p>
+                <p class="price">Количество:</p>
+                <input class="amount" id="amount" placeholder="Количество" type="number" value="1" min="1" oninput="calculate_final_price()">
                 <br>
-                <span class="price" id="price" value="@Model.price"> Цена: @Model.price р</span>
-                <br>
-                <br />
-                <input class="amount" id="amount" placeholder="Количество" type="number" value="1" min="1" onchange="calculate_final_price()">
-                <br>
-                <br />
-                <br />
-                <br />
-                <input id="email" class="email" placeholder="Электронная почта" type="text" value="" oninput="check_email()">
-                <br />
-                <br />
-                <p class="finprice">Итого:</p>
                 <br/>
-                <p name="finalprice" id="final_price" class="finalprice"></p>
-                <hr />
+                <p class="price">Заказсчик:</p>
+                <input class="email" id="email" placeholder="Электронная почта" type="text" value="" oninput="check_email()">
+                <br/>
+                <br/>
+                <p class="finprice">Итого:</p>
+                <p class="finprice" id="final_price"></p>
+                <br/>
+                <hr/>
                 <button id="accept_order" class="savebtn">@Html.ActionLink("Принять", "RegistrateOrder", order)</button>
             </div>
         </main>
     </body>
     <script language="JavaScript">
         document.getElementById('accept_order').style.visibility="hidden";
+        document.getElementById('final_price').innerHTML = document.getElementById('amount').value * document.getElementById('price').innerHTML + " р.";
+        
+        function check_email()
+        {
+            var email = document.getElementById('email').value;
+                            
+            if (email !== "") {
+                document.getElementById('accept_order').style.visibility="visible";
+            } else {
+                document.getElementById('accept_order').style.visibility="hidden";
+            }
+        }
         
         function calculate_final_price()
         {
             var count = document.getElementById('amount').value;
-            var price = document.getElementById('price').value;
-            document.getElementById('final_price').value = count * price;
+            var price = document.getElementById('price').innerHTML;
+            var finish_price = price * count;
+            
+            document.getElementById('final_price').innerHTML = finish_price + " р.";
         }
     </script>
 </html>

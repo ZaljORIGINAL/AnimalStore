@@ -8,14 +8,14 @@ namespace AnimalsStoreWeb.Controllers
     {
         public ActionResult Index(int id)
         {
-            StoreDatabase database = new StoreDatabase();
+            AnimalStore database = new AnimalStore();
             shop_items item = database.shop_items.First(sItem => sItem.id == id);
             return View(item);
         }
 
         public ActionResult RegistrateOrder(orders order)
         {
-            StoreDatabase database = new StoreDatabase();
+            AnimalStore database = new AnimalStore();
             database.orders.Add(order);
             database.SaveChanges();
             return RedirectToAction("Index","Home");

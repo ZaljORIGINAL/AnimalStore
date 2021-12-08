@@ -5,10 +5,10 @@ namespace AnimalsStoreWeb.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
 
-    public partial class StoreDatabase : DbContext
+    public partial class AnimalStore : DbContext
     {
-        public StoreDatabase()
-            : base("name=StoreDatabase")
+        public AnimalStore()
+            : base("name=AnimalStore")
         {
         }
 

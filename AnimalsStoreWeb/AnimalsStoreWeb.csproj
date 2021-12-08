@@ -139,10 +139,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\AnimalStore.cs" />
     <Compile Include="Models\FindedOrders.cs" />
     <Compile Include="Models\orders.cs" />
     <Compile Include="Models\shop_items.cs" />
-    <Compile Include="Models\StoreDatabase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -151,6 +151,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="animals\animal_store_1.png" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />

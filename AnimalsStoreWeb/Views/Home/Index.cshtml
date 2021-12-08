@@ -1,8 +1,8 @@
 ﻿@using AnimalsStoreWeb.Models
-@model AnimalsStoreWeb.Models.StoreDatabase
+@model AnimalsStoreWeb.Models.AnimalStore
 
 @{
-    List<shop_items> ShopItems = new StoreDatabase().shop_items.ToList();
+    List<shop_items> ShopItems = new AnimalStore().shop_items.Where(item => item.visible == true ).ToList();
 }
 
 <html lang="en">
@@ -20,11 +20,28 @@
         @foreach (shop_items item in ShopItems)
         {
             <br />
-            <div class="serviceblock" onclick="location.href='/ShopItemPresent/Index?id=@item.id'">
-                <P>@item.GetImage()</P>
-                <p class="service">@item.name</p>
-                <p class="price">Цена : @item.price р</p>
-                <p class="animalinfo">@item.description</p>
+            <div class="shop_item_box" onclick="location.href='/ShopItemPresent/Index?id=@item.id'">
+                <div class="shop_item_photo_box">
+                    <img src="@item.GetPathToImage()" alt="@item.name"/>
+                </div>
+                <div class="shop_item_description">
+                    <h2>Описание товара</h2>
+                    <br/>
+                    <hr/>
+                    <br/>
+                    <h4>Наименование:</h4>
+                    <p>@item.name</p>
+                    <br/>
+                    <br/>
+                    <h4>Описание:</h4>
+                    <p>@item.description</p>
+                    <br/>
+                    <br/>
+                    <h4>Цена:</h4>
+                    <p>@item.price р.</p>
+                    <br/>
+                    
+                </div>
             </div>
             <br />
         }
